@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBV Crypto Tools — MEV Bots, Snipers & DEX Tools</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #0a0e17; color: #e2e8f0; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 20px 0; border-bottom: 1px solid #1e3a5f; }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 28px; font-weight: 900; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.logo span { color: #f59e0b; -webkit-text-fill-color: #f59e0b; }
+.contact-btn { background: #3b82f6; color: #fff; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+.contact-btn:hover { background: #2563eb; transform: translateY(-2px); }
+.hero { padding: 80px 0 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, #1e3a5f 0%, transparent 70%); }
+.hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+.hero h1 span { background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 32px; }
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(59,130,246,0.4); }
+.btn-secondary { background: transparent; color: #e2e8f0; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; border: 1px solid #334155; transition: all 0.3s; }
+.btn-secondary:hover { border-color: #3b82f6; color: #3b82f6; }
+.tools { padding: 80px 0; }
+.tools h2 { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 48px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+.card { background: #131d2f; border: 1px solid #1e3a5f; border-radius: 16px; padding: 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+.card:hover { border-color: #3b82f6; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(59,130,246,0.15); }
+.card .icon { font-size: 40px; margin-bottom: 16px; }
+.card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.card p { color: #94a3b8; font-size: 15px; margin-bottom: 20px; }
+.card .price { font-size: 28px; font-weight: 900; color: #f59e0b; margin-bottom: 16px; }
+.card .features { list-style: none; margin-bottom: 24px; }
+.card .features li { padding: 6px 0; font-size: 14px; color: #cbd5e1; }
+.card .features li::before { content: "\2713 "; color: #22c55e; font-weight: 700; }
+.card .buy-btn { display: block; text-align: center; background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+.card .buy-btn:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.why { padding: 60px 0; background: #0f172a; }
+.why h2 { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 40px; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; text-align: center; }
+.why-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.why-item p { color: #94a3b8; font-size: 14px; }
+.contact { padding: 80px 0; text-align: center; }
+.contact h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; }
+.contact p { color: #94a3b8; max-width: 500px; margin: 0 auto 32px; }
+.contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.contact-links a { color: #3b82f6; text-decoration: none; font-weight: 600; padding: 10px 20px; border: 1px solid #1e3a5f; border-radius: 8px; transition: all 0.3s; }
+.contact-links a:hover { background: #1e3a5f; }
+footer { padding: 24px 0; border-top: 1px solid #1e3a5f; text-align: center; color: #64748b; font-size: 14px; }
+@media (max-width: 640px) { .hero h1 { font-size: 32px; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+  <div class="logo">BBV<span>Crypto</span></div>
+  <a href="mailto:sssvahidbayat@gmail.com" class="contact-btn">📧 Contact</a>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+  <h1>Premium <span>Crypto Trading Tools</span></h1>
+  <p>Battle-tested MEV bots, token snipers, and DEX tools — built by a developer, used by traders. Direct purchase, source code included.</p>
+  <div class="hero-btns">
+    <a href="#tools" class="btn-primary">🔍 Browse Tools</a>
+    <a href="https://t.me/BBV_Crypto_Tools" class="btn-secondary">💬 Telegram Channel</a>
+  </div>
+</div>
+</section>
+<section class="tools" id="tools">
+<div class="container">
+  <h2>🔥 Our Tools</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🥪</div><h3>BBV-MEV-Sandwich-Bot</h3><p>Automated MEV sandwich bot. Scans mempool, frontruns + backruns large swaps on DEX pairs.</p><div class="price">$99</div><ul class="features"><li>Real-time mempool scanning</li><li>Auto frontrun + backrun logic</li><li>Multi-chain support</li><li>Custom gas &amp; slippage</li></ul><a href="https://github.com/Vahidbayatii/BBV-MEV-Sandwich-Bot" class="buy-btn">View on GitHub</a></div>
+    <div class="card"><div class="icon">⚡</div><h3>BBV-Token-Sniper</h3><p>Ultra-fast token sniper. Buy tokens milliseconds after launch on Uniswap/PancakeSwap.</p><div class="price">$99</div><ul class="features"><li>Millisecond buy speed</li><li>Auto-detect new liquidity</li><li>Custom buy amount &amp; gas</li><li>Sell trigger on profit target</li></ul><a href="https://github.com/Vahidbayatii/BBV-Token-Sniper" class="buy-btn">View on GitHub</a></div>
+    <div class="card"><div class="icon">💰</div><h3>BBV-Wallet-Checker</h3><p>Multi-chain wallet balance checker. Scan 6+ networks simultaneously for token balances.</p><div class="price">$49</div><ul class="features"><li>6+ blockchain support</li><li>Real-time price lookup</li><li>CSV export</li><li>Batch wallet scanning</li></ul><a href="https://github.com/Vahidbayatii/BBV-Wallet-Checker" class="buy-btn">View on GitHub</a></div>
+    <div class="card"><div class="icon">🔄</div><h3>BBV-DEX-Arbitrage</h3><p>Cross-DEX arbitrage scanner. Monitor 5 DEXs simultaneously for profitable price gaps.</p><div class="price">$79</div><ul class="features"><li>5 DEX simultaneous scan</li><li>Auto profit calculation</li><li>Gas estimation included</li><li>Telegram alerts</li></ul><a href="https://github.com/Vahidbayatii/BBV-DEX-Arbitrage" class="buy-btn">View on GitHub</a></div>
+    <div class="card"><div class="icon">🖼️</div><h3>BBV-NFT-Scanner</h3><p>NFT collection analyzer. Track floor prices, mints, flips, and whale movements.</p><div class="price">$49</div><ul class="features"><li>Floor price tracking</li><li>New mint alerts</li><li>Flip &amp; wash analysis</li><li>Whale wallet tracking</li></ul><a href="https://github.com/Vahidbayatii/BBV-NFT-Scanner" class="buy-btn">View on GitHub</a></div>
+  </div>
+</div>
+</section>
+<section class="why"><div class="container"><h2>Why BBV Tools?</h2><div class="why-grid"><div class="why-item"><h4>✅ Source Code Included</h4><p>You get the full source code. No black boxes, no monthly fees.</p></div><div class="why-item"><h4>⚡ Battle-Tested</h4><p>Each tool is tested on mainnet. Real results, real profits.</p></div><div class="why-item"><h4>🔧 Developer Support</h4><p>Direct support from the developer. Custom modifications available.</p></div><div class="why-item"><h4>🔒 Secure &amp; Clean</h4><p>No backdoors, no trackers. Clean, auditable Python code.</p></div></div></div></section>
+<section class="contact"><div class="container"><h2>Get Your Tool Now</h2><p>Contact me directly to purchase. Crypto payments accepted (ETH, USDT, BTC).</p><div class="contact-links"><a href="mailto:sssvahidbayat@gmail.com">📧 sssvahidbayat@gmail.com</a><a href="https://t.me/BBV_Crypto_Tools">💬 Telegram Channel</a><a href="https://github.com/Vahidbayatii">🐙 GitHub Profile</a></div></div></section>
+<footer><div class="container"><p>© 2026 BBV Crypto Tools. Built with 🔥 for the crypto community.</p></div></footer>
+</body>
+</html>
